@@ -8,7 +8,15 @@ public class Main {
          с помощью ключевого слова или сразу заполненный элементами.
          */
 
-        int[] array = new int[] {1, 2, 3};
+        int[] array = new int[3];
+        array[0] = 1;
+        array[1] = 2;
+        array[2] = 3;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1;
+            System.out.print(array[i] + ", ");
+        }
+        System.out.println();
         double[] d = {1.57, 7.654, 9.986};
         boolean[] boo = {true, false};
 
@@ -88,7 +96,7 @@ public class Main {
         System.out.println();
 
         for (int i = 0; i < array.length; i++) {
-            if (i % 2 == 0 ) {
+            if (array[i] % 2 == 1 ) {
                 array[i] = array[i] + 1;
             }
             System.out.print(array[i]);
