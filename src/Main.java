@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         // task1
@@ -96,7 +98,7 @@ public class Main {
         System.out.println();
 
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 1 ) {
+            if (array[i] % 2 == 1) {
                 array[i] = array[i] + 1;
             }
             System.out.print(array[i]);
@@ -105,7 +107,57 @@ public class Main {
             }
             System.out.print(",");
         }
+        System.out.println("/n");
+
+        //task5*
+        /*
+        Создайте матрицу 3х3 (двумерный массив типа int). Заполните единицами обе диагонали матрицы и напечатайте ее в
+         консоль. Постарайтесь заполнить обе диагонали в одном цикле. Для печати следует использовать следующий код:
+    for (int[] row : matrix) {
+        for (int column : row) {
+            System.out.print(column + " ");
+        }
+        System.out.println();
+    }
+         */
+        int size = 3;
+        int[][] matrix = new int[size][size];
+
+        for (int i = 0; i < size; i++) {
+            matrix[i][i] = 1;
+            matrix[i][size - 1 - i] = 1;
+        }
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
         System.out.println();
 
+        // task6
+
+        /*Задание 6
+        У нас есть массив, в котором содержатся целочисленные значения от 1 до 5.
+        Наш коллега что-то напутал, в итоге массив читается не с начала, а с конца.
+        Нам нужно исправить ошибку и переработать код так, чтобы массив читался в правильном порядке.
+                Нам дан массив чисел: {5, 4, 3, 2, 1}
+        Необходимо привести его к виду: {1, 2, 3, 4, 5}
+        Решите задачу с использованием дополнительного массива.
+        Напечатайте массив до преобразования и после с помощью
+        System.out.println(Arrays.toString(arr));
+        Критерии оценки:
+– В консоль выведен результат программы до преобразований массива.
+– В консоль выведен результат программы после преобразований массива.
+– Программа выводит корректный результат при смене значений внутри массива.
+         */
+
+        int[] arr = {5, 4, 3, 2, 1};
+        int[] arr1 = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            arr1[arr.length - i - 1] = arr[i];
+        }
+        arr = arr1;
+        System.out.println(Arrays.toString(arr));
     }
 }
